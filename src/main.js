@@ -7,4 +7,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }else{
     window.location.href = "login/login.html";
   }
+  
 })
