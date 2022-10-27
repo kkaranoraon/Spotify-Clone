@@ -5,7 +5,7 @@ const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const scopes = "user-top-read user-follow-read playlist-read-private user-library-read"
 //const REDIRECT_URI = "http://localhost:3000/login/login.html";
 const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
-const ACCESS_TOKEN_KEY ="accessToken";
+//const ACCESS_TOKEN_KEY ="accessToken";
 //const APP_URL = "http://localhost:3000";
 const APP_URL = import.meta.env.VITE_APP_URL;
 
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.setItemsInLocalStorage = ({accessToken,tokenType,expiresIn})=> {
     localStorage.setItem(ACCESS_TOKEN,accessToken);
     localStorage.setItem(TOKEN_TYPE,tokenType);
-    localStorage.setItem(EXPIRES_IN,expiresIn);
+    localStorage.setItem(EXPIRES_IN,(Date.now() + ( expiresIn*1000)));
     window.location.href = APP_URL;
 }
 
