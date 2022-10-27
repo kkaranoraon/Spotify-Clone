@@ -3,9 +3,11 @@ import { ACCESS_TOKEN, EXPIRES_IN, TOKEN_TYPE } from "../common";
 //const CLIENT_ID = "e7a8cd107f30459cbeeacb8aea80f79f";
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 const scopes = "user-top-read user-follow-read playlist-read-private user-library-read"
-const REDIRECT_URI = "http://localhost:3000/login/login.html";
+//const REDIRECT_URI = "http://localhost:3000/login/login.html";
+const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
 const ACCESS_TOKEN_KEY ="accessToken";
-const APP_URL = "http://localhost:3000";
+//const APP_URL = "http://localhost:3000";
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 
 const authorizeUser = () =>{
