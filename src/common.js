@@ -3,6 +3,7 @@ export const TOKEN_TYPE = "TOKEN_TYPE";
 export const EXPIRES_IN = "EXPIRES_IN";
 
 const APP_URL =  import.meta.env.VITE_APP_URL;
+
 export const ENDPOINT = {
     userInfo:"me"
 }
