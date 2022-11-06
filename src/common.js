@@ -16,3 +16,8 @@ export const logout = ()=>{
     localStorage.removeItem(TOKEN_TYPE);
     window.location.href = APP_URL;
 }
+
+export const SECTIONTYPE = {
+    DASHBOARD :"DASHBOARD",
+    PLAYLIST :"PLAYLIST"
+}

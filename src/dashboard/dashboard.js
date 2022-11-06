@@ -4,7 +4,7 @@
 
 import { doc } from "prettier";
 import { fetchRequest } from "../api";
-import { ENDPOINT, logout } from "../common";
+import { ENDPOINT, logout, SECTIONTYPE } from "../common";
 
 const onProfileClick = (event) => {
   event.stopPropagation();
@@ -38,6 +38,9 @@ const loadUserProfile = async () => {
 
 const onPlaylistItemClicked = (event) => {
   console.log(event.target);
+  const section ={type: SECTIONTYPE.DASHBOARD};
+  history.pushState(section,"","plyalist");
+  loadSection(section);
 }
 
 const loadPlaylist = async (endpoint, elementId) => {
@@ -93,8 +96,28 @@ const fillContentForDashboard = () => {
 
 }
 
+
+const loadSection = (section) =>{
+  if(section.type === SECTIONTYPE.DASHBOARD){
+    fillContentForDashboard();
+    loadPlaylists();
+  }else{
+    //load the elements for playlists
+    const pageContent = document.querySelector("#page-content");
+    pageContent.innerHTML="playlist to be updated";
+  }
+
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   loadUserProfile();
+  const section = {type: SECTIONTYPE.DASHBOARD};
+
+  history.pushState(section,"","");
   fillContentForDashboard();
   loadPlaylists();
 
